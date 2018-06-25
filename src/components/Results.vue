@@ -1,7 +1,9 @@
 <template>
-  <div class="search">
-    Results
-  </div>
+<div class='results'>
+   <div>Results-list</div>
+   <div>Results-dashboard</div>
+   <div>No results</div>
+   </div>
 </template>
 
 <script>
@@ -16,4 +18,9 @@ export default {
 </script>
 
 <style>
+.results {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
 </style>

@@ -1,19 +1,23 @@
 <template>
   <div class="app">
-    <navigation />
-    <router-view/>
-    <div class='footer'>Footer</div>
+    <div class='wrapper'>
+      <navigation />
+      <router-view/>
+    </div>
+    <footer-info />
   </div>
 </template>
 
 <script>
 
 import Navigation from '@/components/Navigation.vue';
+import FooterInfo from '@/components/FooterInfo.vue';
 
 export default {
   name: 'app',
   components: {
     Navigation,
+    FooterInfo,
   },
 };
 </script>
@@ -49,6 +53,14 @@ button {
 .app {
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  min-height: 100vh;
 }
 
+.wrapper {
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
 </style>
