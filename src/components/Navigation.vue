@@ -1,6 +1,6 @@
 <template>
   <div class='header'>
-      <Logo />
+      <logo />
       <div class='nav-group'>
         <router-link to='/search' class='header__search-link'>Search</router-link>
         <router-link to='/my-list' class='header__my-list-link'>My List</router-link>
@@ -13,7 +13,7 @@
 import Logo from '@/components/Logo.vue';
 
 export default {
-  name: 'header',
+  name: 'navigation',
   components: {
     Logo,
   },

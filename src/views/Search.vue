@@ -1,14 +1,31 @@
 <template>
   <div class="search">
-    Search
+    <search-panel />
+    <toggle-view />
+    <results />
   </div>
 </template>
 
 <script>
 
+import SearchPanel from '@/components/SearchPanel.vue';
+import ToggleView from '@/components/ToggleView.vue';
+import Results from '@/components/Results.vue';
+
 export default {
   name: 'search',
   components: {
+    SearchPanel,
+    ToggleView,
+    Results,
   },
 };
 </script>
+
+<style>
+.search {
+  flex-direction: column;
+}
+
+</style>
+
