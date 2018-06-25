@@ -1,0 +1,52 @@
+<template>
+  <div className="header">
+      <Logo />
+      <div className="nav-group">
+        <router-link to="/" className="header__search-link">Search</router-link>
+        <router-link to="/my-list" className="header__my-list-link">My List</router-link>
+      </div>
+    </div>
+</template>
+
+<script>
+
+import Logo from '@/components/Logo.vue';
+
+export default {
+  name: 'header',
+  components: {
+    Logo,
+  },
+};
+</script>
+
+<style scoped>
+.header {
+  background: #3c4146;
+  color: #ffffff;
+  height: 53px;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.header__my-list-link,
+.header__search-link {
+  margin-right: 5%;
+  align-items: center;
+  color: #b3bcc7;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 100;
+}
+
+.header__my-list-link.active,
+.header__search-link.active {
+  color: white;
+  font-weight: normal;
+}
+
+.header__my-list-link:hover,
+.header__search-link:hover {
+  color: white;
+}
+</style>
