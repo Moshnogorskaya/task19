@@ -48,6 +48,7 @@ button {
 
 .app {
   flex-direction: column;
+  align-items: center;
 }
 
 </style>

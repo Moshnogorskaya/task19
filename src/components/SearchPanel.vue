@@ -30,21 +30,4 @@ export default {
   align-items: flex-end;
   font-size: 16px;
 }
-
-/* <Select
-          options={types}
-          required
-          isValid={this.state.isValid}
-          onChangeValue={this.handleTypeChange}
-        />
-        <Select
-          options={languages}
-          placeholder="Language"
-          onChangeValue={this.handleLanguageChange}
-        />
-        <InputKeywords onChangeValue={this.handleKeywordChange} />
-        <Submit
-          onButtonClick={this.handleButtonClick}
-          disabled={this.props.waiting}
-        /> */
 </style>

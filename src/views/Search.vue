@@ -25,6 +25,8 @@ export default {
 <style>
 .search {
   flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 
 </style>
