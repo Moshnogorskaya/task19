@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div class="app">
     <Header />
     <router-view/>
     <div class='footer'>Footer</div>
@@ -20,16 +20,34 @@ export default {
 
 
 <style>
-</style>
+body {
+  margin: 0;
+  padding: 0;
+  min-width: 1000px;
+  font-family: Roboto, sans-serif;
+}
 
-<!--
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Search</router-link> |
-      <router-link to="/my-list">My List</router-link>
-    </div>
-    <router-view/>
-  </div>
-</template>
--->
+div,
+a,
+h1,
+p,
+ul,
+li,
+form,
+input,
+select,
+button {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0px;
+  appearance: none;
+}
+
+.app {
+  flex-direction: column;
+}
+
+</style>

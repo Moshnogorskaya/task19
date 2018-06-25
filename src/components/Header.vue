@@ -1,9 +1,9 @@
 <template>
-  <div className="header">
+  <div class='header'>
       <Logo />
-      <div className="nav-group">
-        <router-link to="/" className="header__search-link">Search</router-link>
-        <router-link to="/my-list" className="header__my-list-link">My List</router-link>
+      <div class='nav-group'>
+        <router-link to='/search' class='header__search-link'>Search</router-link>
+        <router-link to='/my-list' class='header__my-list-link'>My List</router-link>
       </div>
     </div>
 </template>
@@ -20,13 +20,19 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
+
 .header {
   background: #3c4146;
   color: #ffffff;
   height: 53px;
   justify-content: space-between;
   width: 100%;
+}
+
+.nav-group {
+  width: 50%;
+  justify-content: flex-end;
 }
 
 .header__my-list-link,
@@ -37,10 +43,10 @@ export default {
   text-decoration: none;
   font-size: 13px;
   font-weight: 100;
+  white-space: nowrap;
 }
 
-.header__my-list-link.active,
-.header__search-link.active {
+.router-link-active {
   color: white;
   font-weight: normal;
 }
