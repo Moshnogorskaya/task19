@@ -1,6 +1,6 @@
 <template>
    <button
-     @click.prevent='$emit()'
+     @click='$emit("Submit")'
       class='search__button'>
       <span>SEARCH</span>
     </button>

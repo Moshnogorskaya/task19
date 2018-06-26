@@ -1,9 +1,10 @@
 <template>
-  <div class="search__search-panel">
+  <div
+  class="search__search-panel">
     <select-option />
     <select-option />
     <input-keyword />
-    <submit />
+    <submit v-on:Submit='composeURL'/>
   </div>
 </template>
 
@@ -18,6 +19,11 @@ export default {
     SelectOption,
     InputKeyword,
     Submit,
+  },
+  methods: {
+    composeURL() {
+      console.log('url');
+    },
   },
 };
 </script>
