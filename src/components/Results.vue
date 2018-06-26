@@ -1,7 +1,7 @@
 <template>
 <div class='results'>
-   <results-list />
-   <!-- <div>Results-dashboard</div> -->
+   <!-- <results-list /> -->
+   <results-dashboard />
    <!-- <no-results /> -->
    </div>
 </template>
@@ -10,12 +10,15 @@
 
 import NoResults from '@/components/NoResults.vue';
 import ResultsList from '@/components/ResultsList.vue';
+import ResultsDashboard from '@/components/ResultsDashboard.vue';
+
 
 export default {
   name: 'results',
   components: {
     NoResults,
     ResultsList,
+    ResultsDashboard,
   },
 };
 </script>
