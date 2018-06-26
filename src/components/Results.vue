@@ -1,19 +1,21 @@
 <template>
 <div class='results'>
-   <!-- <div>Results-list</div>
-   <div>Results-dashboard</div> -->
-   <no-results />
+   <results-list />
+   <!-- <div>Results-dashboard</div> -->
+   <!-- <no-results /> -->
    </div>
 </template>
 
 <script>
 
 import NoResults from '@/components/NoResults.vue';
+import ResultsList from '@/components/ResultsList.vue';
 
 export default {
   name: 'results',
   components: {
     NoResults,
+    ResultsList,
   },
 };
 </script>
