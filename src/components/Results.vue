@@ -1,7 +1,7 @@
 <template>
 <div class='results'>
-   <!-- <results-list /> -->
-   <results-dashboard />
+   <results-list />
+   <!-- <results-dashboard /> -->
    <!-- <no-results /> -->
    </div>
 </template>
