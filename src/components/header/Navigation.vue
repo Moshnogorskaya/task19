@@ -10,7 +10,7 @@
 
 <script>
 
-import Logo from '@/components/Logo.vue';
+import Logo from './Logo.vue';
 
 export default {
   name: 'navigation',

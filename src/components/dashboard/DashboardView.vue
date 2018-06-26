@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import DashboardViewStats from '@/components/DashboardViewStats.vue';
-import DashboardViewInfo from '@/components/DashboardViewInfo.vue';
+import DashboardViewStats from './DashboardViewStats.vue';
+import DashboardViewInfo from './DashboardViewInfo.vue';
 
 export default {
   name: 'dashboard-view',

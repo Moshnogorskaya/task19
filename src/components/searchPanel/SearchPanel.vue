@@ -8,9 +8,9 @@
 </template>
 
 <script>
-import SelectOption from '@/components/SelectOption.vue';
-import InputKeyword from '@/components/InputKeyword.vue';
-import Submit from '@/components/Submit.vue';
+import SelectOption from './SelectOption.vue';
+import InputKeyword from './InputKeyword.vue';
+import Submit from './Submit.vue';
 
 export default {
   name: 'search-panel',

@@ -8,10 +8,9 @@
 
 <script>
 
-import NoResults from '@/components/NoResults.vue';
-import ResultsList from '@/components/ResultsList.vue';
-import ResultsDashboard from '@/components/ResultsDashboard.vue';
-
+import ResultsList from '@/components/list/ResultsList.vue';
+import ResultsDashboard from '@/components/dashboard/ResultsDashboard.vue';
+import NoResults from './NoResults.vue';
 
 export default {
   name: 'results',

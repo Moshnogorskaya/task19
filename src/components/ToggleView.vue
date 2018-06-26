@@ -20,7 +20,6 @@ export default {
 </script>
 
 <style>
-/* font-family:'FontAwesome' !important; */
 
 .view {
   width: 100%;

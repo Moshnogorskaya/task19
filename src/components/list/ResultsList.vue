@@ -20,7 +20,7 @@
 
 <script>
 
-import ListView from '@/components/ListView.vue';
+import ListView from './ListView.vue';
 
 export default {
   name: 'results',

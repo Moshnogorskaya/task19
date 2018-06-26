@@ -26,7 +26,7 @@ export default {
 
 .header__icon {
   width: 8%;
-  background: url("./../assets/search_cat.png") center no-repeat;
+  background: url("./../../assets/search_cat.png") center no-repeat;
   background-size: contain;
   margin: 1% 0 1% 5%;
 }

@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import DashboardView from '@/components/DashboardView.vue';
+import DashboardView from './DashboardView.vue';
 
 export default {
   name: 'results-dashboard',

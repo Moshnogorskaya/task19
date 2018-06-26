@@ -8,7 +8,7 @@
 
 <script>
 
-import SearchPanel from '@/components/SearchPanel.vue';
+import SearchPanel from '@/components/searchPanel/SearchPanel.vue';
 import ToggleView from '@/components/ToggleView.vue';
 import Results from '@/components/Results.vue';
 

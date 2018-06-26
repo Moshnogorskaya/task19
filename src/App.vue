@@ -10,7 +10,7 @@
 
 <script>
 
-import Navigation from '@/components/Navigation.vue';
+import Navigation from '@/components/header/Navigation.vue';
 import FooterInfo from '@/components/FooterInfo.vue';
 
 export default {

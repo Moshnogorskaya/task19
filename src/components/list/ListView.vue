@@ -10,8 +10,8 @@
 
 <script>
 
-import ListViewInfo from '@/components/ListViewInfo.vue';
-import ListViewStats from '@/components/ListViewStats.vue';
+import ListViewInfo from './ListViewInfo.vue';
+import ListViewStats from './ListViewStats.vue';
 
 export default {
   name: 'list-view',
