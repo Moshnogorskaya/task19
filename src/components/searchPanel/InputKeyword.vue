@@ -6,9 +6,10 @@
           Type here for search
         </p>
         <input
-          v-model="keyword"
+          :value="keyword"
+          @input="$emit('input', $event.target.value)"
           @focus="active = true"
-          @blur="active = keyword"
+          @blur='active = false'
           type='text'
           maxLength='50'
           class='input__field'
@@ -20,10 +21,10 @@
 export default {
   name: 'input-keyword',
   components: {},
+  props: ['keyword'],
   data() {
     return {
       active: false,
-      keyword: '',
     };
   },
 };
