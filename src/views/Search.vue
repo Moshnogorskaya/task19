@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <search-panel />
-    <toggle-view />
+    <!-- <toggle-view /> -->
     <results />
     <!-- <no-results /> -->
   </div>
@@ -21,6 +21,11 @@ export default {
     ToggleView,
     Results,
     NoResults,
+  },
+  data: function() {
+    return {
+      isList: true,
+    }
   },
 };
 </script>

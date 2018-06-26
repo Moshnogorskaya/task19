@@ -1,10 +1,12 @@
 <template>
  <div class="view">
         <button
-          class='view__dashboard'>
+          class='view__dashboard'
+          @click='$emit("view-dashboard")'>
           <i class="fas fa-th-large"></i>
         </button>
-        <button class='view__list'>
+        <button class='view__list'
+        @click='$emit("view-list")'>
          <i class="fas fa-bars"></i>
         </button>
       </div>

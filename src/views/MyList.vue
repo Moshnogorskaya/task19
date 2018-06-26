@@ -1,21 +1,18 @@
 <template>
   <div class="my-list">
     <h1 class="my-list__heading">My List</h1>
-    <toggle-view />
     <results />
      <!-- <no-results /> -->
   </div>
 </template>
 
 <script>
-import ToggleView from '@/components/ToggleView.vue';
 import Results from '@/components/Results.vue';
 import NoResults from '@/components/NoResults.vue';
 
 export default {
   name: 'my-list',
   components: {
-    ToggleView,
     Results,
     NoResults,
   },
