@@ -2,7 +2,6 @@
 <div class='results'>
    <results-list />
    <!-- <results-dashboard /> -->
-   <!-- <no-results /> -->
    </div>
 </template>
 
@@ -10,15 +9,23 @@
 
 import ResultsList from '@/components/list/ResultsList.vue';
 import ResultsDashboard from '@/components/dashboard/ResultsDashboard.vue';
-import NoResults from './NoResults.vue';
 
 export default {
   name: 'results',
   components: {
-    NoResults,
     ResultsList,
     ResultsDashboard,
   },
+  // data: function() {
+  //   return {
+  //     isList: true,
+  //   }
+  // },
+  // methods: {
+  //   toggle: function() {
+  //     this.isList = !this.isList;
+  //   }
+  // },
 };
 </script>
 

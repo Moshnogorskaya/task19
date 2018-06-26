@@ -3,6 +3,7 @@
     <search-panel />
     <toggle-view />
     <results />
+    <!-- <no-results /> -->
   </div>
 </template>
 
@@ -11,6 +12,7 @@
 import SearchPanel from '@/components/searchPanel/SearchPanel.vue';
 import ToggleView from '@/components/ToggleView.vue';
 import Results from '@/components/Results.vue';
+import NoResults from '@/components/NoResults.vue';
 
 export default {
   name: 'search',
@@ -18,6 +20,7 @@ export default {
     SearchPanel,
     ToggleView,
     Results,
+    NoResults,
   },
 };
 </script>
@@ -30,4 +33,3 @@ export default {
 }
 
 </style>
-
