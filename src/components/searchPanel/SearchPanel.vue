@@ -1,10 +1,10 @@
 <template>
   <div
   class="search__search-panel">
-    <select-option />
-    <select-option />
+    <select-option :placeholder="'Type'"/>
+    <select-option :placeholder='"Language"'/>
     <input-keyword />
-    <submit v-on:Submit='composeURL'/>
+    <submit v-on:startSearch='composeURL'/>
   </div>
 </template>
 

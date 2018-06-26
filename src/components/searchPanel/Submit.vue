@@ -1,6 +1,6 @@
 <template>
    <button
-     @click='$emit("Submit")'
+     @click='$emit("startSearch")'
       class='search__button'>
       <span>SEARCH</span>
     </button>

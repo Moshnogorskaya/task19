@@ -1,8 +1,12 @@
 <template>
   <div class='select__group'>
-      <select class='select-group__select'>
-        <option disabled selected>Type</option>
-        <option>Js</option>
+      <select
+      v-model='selected'
+      class='select-group__select'>
+        <option v-bind:value="'placeholder'" disabled>{{ placeholder }}</option>
+        <option v-for="option in options" v-bind:key='option.value' v-bind:value="option.value">
+          {{ option.text }}
+        </option>
       </select>
     <div class='select-group__arrow'>▼</div>
   </div>
@@ -12,7 +16,18 @@
 export default {
   name: 'select-option',
   components: {},
+  props: { placeholder: String },
+  data() {
+    return {
+      selected: 'placeholder',
+      options: [
+        { text: 'Javascript', value: 'javascript' },
+        { text: 'CSS', value: 'css' },
+      ],
+    };
+  },
 };
+
 </script>
 
 <style>
