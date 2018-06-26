@@ -1,10 +1,14 @@
 <template>
   <div class='input'>
         <p
+          :class="['input__placeholder', { input__placeholder_active: !active === false}]"
           class='input__placeholder'>
           Type here for search
         </p>
         <input
+          v-model="keyword"
+          @focus="active = true"
+          @blur="active = keyword"
           type='text'
           maxLength='50'
           class='input__field'
@@ -16,6 +20,12 @@
 export default {
   name: 'input-keyword',
   components: {},
+  data() {
+    return {
+      active: false,
+      keyword: '',
+    };
+  },
 };
 </script>
 
@@ -35,7 +45,7 @@ export default {
   z-index: 1;
 }
 
-.input__placeholder.active {
+.input__placeholder_active {
   font-size: 12px;
   color: #0366d6;
   top: 10px;

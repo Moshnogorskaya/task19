@@ -20,7 +20,6 @@ export default {
   data() {
     return {
       selected: 'placeholder',
-      // options: ['JS', 'CSS'],
     };
   },
 };
