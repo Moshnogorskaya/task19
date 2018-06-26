@@ -2,7 +2,9 @@
   <div class="app">
     <div class='wrapper'>
       <navigation />
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </div>
     <footer-info />
   </div>

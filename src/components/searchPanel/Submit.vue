@@ -1,8 +1,9 @@
 <template>
    <button
-        class='search__button'>
-        <span>SEARCH</span>
-      </button>
+     @click.prevent='$emit()'
+      class='search__button'>
+      <span>SEARCH</span>
+    </button>
 </template>
 
 <script>
