@@ -1,8 +1,8 @@
 <template>
   <div class="my-list">
     <h1 class="my-list__heading">My List</h1>
-    <results />
-     <!-- <no-results /> -->
+    <results v-if='repos.length'/>
+    <no-results v-else />
   </div>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   components: {
     Results,
     NoResults,
+  },
+  data() {
+    return {
+      repos: [],
+    };
   },
 };
 </script>

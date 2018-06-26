@@ -1,8 +1,8 @@
 <template>
   <div class="search">
     <search-panel />
-    <results />
-    <!-- <no-results /> -->
+    <results v-if='repos.length'/>
+    <no-results v-else />
   </div>
 </template>
 
@@ -18,6 +18,11 @@ export default {
     SearchPanel,
     Results,
     NoResults,
+  },
+  data() {
+    return {
+      repos: [1],
+    };
   },
 };
 </script>
