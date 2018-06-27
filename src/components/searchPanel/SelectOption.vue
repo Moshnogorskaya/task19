@@ -1,5 +1,7 @@
 <template>
-  <div class='select__group'>
+  <div class='select__group'
+    :class="['select__group', { select__group_error: valid === false }]"
+  >
       <select
       :value="selected"
       @input="selected = $event.target.value; $emit('input', selected)"
@@ -17,7 +19,7 @@
 export default {
   name: 'select-option',
   components: {},
-  props: ['placeholder', 'options'],
+  props: ['placeholder', 'options', 'valid'],
   data() {
     return {
       selected: 'placeholder',
@@ -34,7 +36,7 @@ export default {
   height: 30px;
 }
 
-.select__group.warning {
+.select__group_error {
   background: #fce6f1;
 }
 

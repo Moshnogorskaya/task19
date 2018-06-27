@@ -1,7 +1,7 @@
 <template>
   <div
   class="search__search-panel">
-    <select-option :placeholder="'Type'" :options='types' v-model="type" />
+    <select-option :placeholder="'Type'" :options='types' v-model="type" :valid="valid" />
     <select-option :placeholder='"Language"' :options='languages' v-model="language" />
     <input-keyword v-model="keyword" />
     <submit v-on:startSearch='composeURL'/>
@@ -29,11 +29,17 @@ export default {
       keyword: '',
       type: '',
       language: '',
+      valid: true,
     };
   },
   methods: {
     composeURL() {
-      console.log('url');
+      this.valid = !!this.type; //can have additional required fields
+      let url;
+      if (this.valid) {
+        url = this.type + this.language + this.keyword;
+        console.log(url);
+      }
     },
   },
 };
