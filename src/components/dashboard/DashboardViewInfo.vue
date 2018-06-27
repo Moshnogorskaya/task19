@@ -4,7 +4,7 @@
         {{ repo.name }}
       </a>
       <p class="repo-dashboard__description">{{ repo.description }}</p>
-      <ul className="repo-dashboard__topics topics">
+      <ul class="repo-dashboard__topics topics">
         <li v-for='(topic, index) in repo.topics' :key='index' class="topics__item">{{ topic }}</li>
       </ul>
     </div>
