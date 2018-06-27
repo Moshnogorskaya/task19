@@ -7,9 +7,9 @@
         </p>
         <input
           :value="keyword"
-          @input="$emit('input', $event.target.value)"
+          @input="keyword = $event.target.value; $emit('input', keyword)"
           @focus="active = true"
-          @blur='active = false'
+          @blur='active = keyword'
           type='text'
           maxLength='50'
           class='input__field'
@@ -21,10 +21,10 @@
 export default {
   name: 'input-keyword',
   components: {},
-  props: ['keyword'],
   data() {
     return {
       active: false,
+      keyword: '',
     };
   },
 };
