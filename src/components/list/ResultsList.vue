@@ -3,7 +3,12 @@
     <li v-for='(value, key) in repos' :key='key' class="results-list__item">
       <div class="repo">
         <div class="wrapper-repo-action">
-          <button class='repo__action' @click='$emit("toggleRepo", value.id)' />
+          <button
+            :class="['repo__action', {
+              repo__action_add: value.saved === false,
+              repo__action_delete: value.saved === true
+              }]"
+            @click='$emit("toggleRepo", value.id)' />
         </div>
         <list-view-info :repo='value' />
         <list-view-stats :repo='value' />
@@ -23,6 +28,10 @@ export default {
   components: {
     ListViewInfo,
     ListViewStats,
+  },
+  data() {
+    return {
+    }
   },
 };
 </script>
@@ -49,10 +58,10 @@ export default {
   width: 15px;
   cursor: pointer;
 }
-.repo__action.add {
+.repo__action_add {
   background: white;
 }
-.repo__action.delete {
+.repo__action_delete {
   background: #0366d6;
 }
 </style>

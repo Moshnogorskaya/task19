@@ -35,7 +35,7 @@ export default {
       } else {
         this.savedRepos[id] = this.repos[id];
       }
-    },
+    }
   },
 };
 </script>
