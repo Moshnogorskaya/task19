@@ -4,15 +4,16 @@
         <span class="stars-group__icon">
           <i class="fas fa-star"></i>
         </span>
-        100
+        {{ repo.stargazers_count }}
       </div>
-      <div class="repo__language">Language</div>
+      <div class="repo__language">{{ repo.language }}</div>
     </div>
 </template>
 
 <script>
 export default {
   name: 'list-view-stats',
+  props: ['repo'],
   components: {
   },
 };

@@ -1,11 +1,9 @@
 <template>
   <div class="repo__info">
-    <a href='' class="repo__name">Name</a>
-    <p class="repo__description">description</p>
+    <a href='' class="repo__name">{{ repo.name }}</a>
+    <p class="repo__description">{{ repo.description }}</p>
     <ul class="repo__topics topics">
-      <li class="topics__item">topic</li>
-      <li class="topics__item">topic</li>
-      <li class="topics__item">topic</li>
+      <li v-for='(topic, index) in repo.topics' :key='index' class="topics__item">{{ topic }}</li>
     </ul>
   </div>
 </template>
@@ -13,6 +11,7 @@
 <script>
 export default {
   name: 'list-view-info',
+  props: ['repo'],
   components: {
   },
 };

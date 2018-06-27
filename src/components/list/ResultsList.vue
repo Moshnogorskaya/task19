@@ -5,8 +5,8 @@
         <div class="wrapper-repo-action">
           <button class='repo__action' />
         </div>
-        <list-view-info />
-        <list-view-stats />
+        <list-view-info :repo='value' />
+        <list-view-stats :repo='value' />
       </div>
     </li>
   </ul>
