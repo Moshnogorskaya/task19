@@ -11,7 +11,6 @@ import SearchPanel from '@/components/searchPanel/SearchPanel.vue';
 import Results from '@/components/Results.vue';
 import NoResults from '@/components/NoResults.vue';
 import getGithubData from '@/components/utility/get-github-data';
-import prepareDataToDisplay from '@/components/utility/prepare-data-to-display';
 
 export default {
   name: 'search',
@@ -24,8 +23,8 @@ export default {
   methods: {
     getRepos(url) {
       getGithubData(url).then((response) => {
-        const myRepos = prepareDataToDisplay(response.data.items);
-        this.$emit('gotFreshRepos', myRepos);
+        // const myRepos = prepareDataToDisplay(response.data.items);
+        this.$emit('gotFreshRepos', response.data.items);
       });
     },
   },

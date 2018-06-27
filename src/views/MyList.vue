@@ -1,7 +1,7 @@
 <template>
   <div class="my-list">
     <h1 class="my-list__heading">My List</h1>
-    <results v-if='Object.keys(savedRepos).length' :repos='savedRepos' @toggleRepo='$emit("toggleRepo", $event)' />
+    <results v-if='saved' :repos='savedRepos' @toggleRepo='$emit("toggleRepo", $event); saved--' />
     <no-results v-else />
   </div>
 </template>
@@ -16,6 +16,11 @@ export default {
   components: {
     Results,
     NoResults,
+  },
+  data() {
+    return {
+      saved: Object.keys(this.savedRepos).length,
+    };
   },
 };
 </script>

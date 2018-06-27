@@ -2,8 +2,8 @@
   <div class="app">
     <div class='wrapper'>
       <navigation />
-      <keep-alive>
-        <router-view @gotFreshRepos='repos = $event' @toggleRepo='toggleRepo' :repos='repos' :savedRepos='savedRepos' />
+      <keep-alive include='search'>
+        <router-view @gotFreshRepos='prepareRepos' @toggleRepo='toggleRepo' :repos='repos' :savedRepos='savedRepos' />
       </keep-alive>
     </div>
     <footer-info />
@@ -14,6 +14,7 @@
 
 import Navigation from '@/components/header/Navigation.vue';
 import FooterInfo from '@/components/FooterInfo.vue';
+import prepareDataToDisplay from '@/components/utility/prepare-data-to-display';
 
 export default {
   name: 'app',
@@ -28,6 +29,9 @@ export default {
     };
   },
   methods: {
+    prepareRepos(repos) {
+    this.repos = prepareDataToDisplay(repos);
+    },
     toggleRepo(id) {
       this.repos[id].saved = !this.repos[id].saved;
       if (this.savedRepos[id]) {
