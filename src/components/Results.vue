@@ -15,6 +15,7 @@
   <component
     :is='currentViewComponent'
     :repos='repos'
+    @toggleRepo='$emit("toggleRepo", $event)'
   ></component>
    </div>
 </template>

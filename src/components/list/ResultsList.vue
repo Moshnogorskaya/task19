@@ -3,7 +3,7 @@
     <li v-for='(value, key) in repos' :key='key' class="results-list__item">
       <div class="repo">
         <div class="wrapper-repo-action">
-          <button class='repo__action' />
+          <button class='repo__action' @click='$emit("toggleRepo", value.id)' />
         </div>
         <list-view-info :repo='value' />
         <list-view-stats :repo='value' />

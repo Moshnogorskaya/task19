@@ -3,7 +3,7 @@
     <div class='wrapper'>
       <navigation />
       <keep-alive>
-        <router-view @gotFreshRepos='repos = $event' :repos='repos' />
+        <router-view @gotFreshRepos='repos = $event' @toggleRepo='toggleRepo' :repos='repos' />
       </keep-alive>
     </div>
     <footer-info />
@@ -24,7 +24,18 @@ export default {
   data() {
     return {
       repos: {},
+      savedRepos: {},
     };
+  },
+  methods: {
+    toggleRepo(id) {
+      this.repos[id].saved = !this.repos[id].saved;
+      if (this.savedRepos[id]) {
+        delete this.savedRepos[id];
+      } else {
+        this.savedRepos[id] = this.repos[id];
+      }
+    },
   },
 };
 </script>
