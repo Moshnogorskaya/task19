@@ -3,7 +3,7 @@
     <div class='wrapper'>
       <navigation />
       <keep-alive>
-        <router-view @gotFreshRepos='repos = $event' @toggleRepo='toggleRepo' :repos='repos' />
+        <router-view @gotFreshRepos='repos = $event' @toggleRepo='toggleRepo' :repos='repos' :savedRepos='savedRepos' />
       </keep-alive>
     </div>
     <footer-info />

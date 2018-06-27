@@ -1,7 +1,7 @@
 <template>
   <div class="my-list">
     <h1 class="my-list__heading">My List</h1>
-    <results v-if='repos.length'/>
+    <results v-if='Object.keys(savedRepos).length' :repos='savedRepos' @toggleRepo='$emit("toggleRepo", $event)' />
     <no-results v-else />
   </div>
 </template>
@@ -12,14 +12,10 @@ import NoResults from '@/components/NoResults.vue';
 
 export default {
   name: 'my-list',
+  props: ['savedRepos'],
   components: {
     Results,
     NoResults,
-  },
-  data() {
-    return {
-      repos: [1],
-    };
   },
 };
 </script>
