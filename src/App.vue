@@ -3,7 +3,7 @@
     <div class='wrapper'>
       <navigation />
       <keep-alive>
-        <router-view/>
+        <router-view @gotFreshRepos='repos = $event' :repos='repos' />
       </keep-alive>
     </div>
     <footer-info />
@@ -20,6 +20,11 @@ export default {
   components: {
     Navigation,
     FooterInfo,
+  },
+  data() {
+    return {
+      repos: {},
+    };
   },
 };
 </script>

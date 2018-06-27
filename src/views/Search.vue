@@ -15,16 +15,17 @@ import prepareDataToDisplay from '@/components/utility/prepare-data-to-display';
 
 export default {
   name: 'search',
+  props: ['repos'],
   components: {
     SearchPanel,
     Results,
     NoResults,
   },
-  data() {
-    return {
-      repos: {},
-    };
-  },
+  // data() {
+  //   return {
+  //     repos: {},
+  //   };
+  // },
   methods: {
     getRepos(url) {
       console.log('search is started');
@@ -33,6 +34,7 @@ export default {
         const myRepos = prepareDataToDisplay(response.data.items);
         console.log(myRepos);
         this.repos = myRepos;
+        this.$emit('gotFreshRepos', this.repos);
       });
     },
   },

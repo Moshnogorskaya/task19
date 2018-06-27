@@ -23,7 +23,7 @@ function prepareDataToDisplay(repos) {
   const newRepos = {};
   repos.forEach((repo) => {
     const newRepo = Object.assign({}, repo);
-    newRepo.topics = newRepo.topics.slice(0, 5);
+    newRepo.topics = newRepo.topics.slice(0, 4);
     newRepo.description = cutString(repo.description, 90);
     newRepo.saved = false;
     newRepos[repo.id] = newRepo;
