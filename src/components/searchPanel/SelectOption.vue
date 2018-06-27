@@ -1,10 +1,11 @@
 <template>
   <div class='select__group'
-    :class="['select__group', { select__group_error: valid === false }]"
+    :class="['select__group', { select__group_error: valid === false && active === false }]"
   >
       <select
       :value="selected"
       @input="selected = $event.target.value; $emit('input', selected)"
+      @focus='active = true'
       class='select-group__select'>
         <option v-bind:value="'placeholder'" disabled>{{ placeholder }}</option>
         <option v-for="option in options" v-bind:key='option' v-bind:value="option">
@@ -23,6 +24,7 @@ export default {
   data() {
     return {
       selected: 'placeholder',
+      active: false,
     };
   },
 };

@@ -34,10 +34,10 @@ export default {
   },
   methods: {
     composeURL() {
-      this.valid = !!this.type; //can have additional required fields
+      this.valid = !!this.type;
       let url;
       if (this.valid) {
-        url = this.type + this.language + this.keyword;
+        url = `https://api.github.com/search/${this.type.toLowerCase()}?q=${this.keyword}+language:${this.language}&sort=stars&order=desc`;
         console.log(url);
       }
     },
