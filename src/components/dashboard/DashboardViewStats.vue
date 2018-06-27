@@ -1,11 +1,11 @@
 <template>
 <div class="repo-dashboard__stats">
-      <div class="repo-dashboard__language">Language</div>
+      <div class="repo-dashboard__language">{{ repo.language }}</div>
       <div class="repo-dashboard__stars stars">
         <span class="stars__icon">
           <i class="fas fa-star"></i>
         </span>
-        100
+        {{ repo.stargazers_count }}
       </div>
     </div>
 </template>
@@ -13,6 +13,7 @@
 <script>
 export default {
   name: 'dashboard-view-stats',
+  props: ['repo'],
   components: {
   },
 };

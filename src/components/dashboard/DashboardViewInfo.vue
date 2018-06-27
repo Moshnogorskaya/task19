@@ -1,19 +1,11 @@
 <template>
 <div class="content-dashboard-wrapper">
       <a href='' class="repo-dashboard__name">
-        name
+        {{ repo.name }}
       </a>
-      <p class="repo-dashboard__description">description</p>
+      <p class="repo-dashboard__description">{{ repo.description }}</p>
       <ul className="repo-dashboard__topics topics">
-        <li class="topics__item">
-          topic
-        </li>
-        <li class="topics__item">
-          topic
-        </li>
-        <li class="topics__item">
-          topic
-        </li>
+        <li v-for='(topic, index) in repo.topics' :key='index' class="topics__item">{{ topic }}</li>
       </ul>
     </div>
 </template>
@@ -21,6 +13,7 @@
 <script>
 export default {
   name: 'dashboard-view-info',
+  props: ['repo'],
   components: {
   },
 };
