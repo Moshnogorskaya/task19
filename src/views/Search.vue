@@ -11,6 +11,8 @@
 import SearchPanel from '@/components/searchPanel/SearchPanel.vue';
 import Results from '@/components/Results.vue';
 import NoResults from '@/components/NoResults.vue';
+import getGithubData from '@/components/utility/get-github-data';
+import prepareDataToDisplay from '@/components/utility/prepare-data-to-display';
 
 const repo1 = {
   id: 100,
@@ -63,9 +65,15 @@ export default {
     };
   },
   methods: {
-    getRepos() {
+    getRepos(url) {
       console.log('search is started');
-      console.log(this.repos[100]);
+      getGithubData(url).then((response) => {
+        console.log(response.data.items);
+        const myRepos = prepareDataToDisplay(response.data.items);
+        console.log(myRepos);
+        this.repos = myRepos;
+        // this.timer = setTimeout(() => this.setState({ waiting: false }), 2000);
+      });
     },
   },
 };
