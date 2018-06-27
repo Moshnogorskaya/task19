@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <search-panel />
+    <search-panel @submitSearch='getRepos' />
     <results v-if='repos.length'/>
     <no-results v-else />
   </div>
@@ -23,6 +23,11 @@ export default {
     return {
       repos: [1],
     };
+  },
+  methods: {
+    getRepos() {
+      console.log("search is started");
+    },
   },
 };
 </script>
