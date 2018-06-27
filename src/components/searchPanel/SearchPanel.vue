@@ -1,8 +1,8 @@
 <template>
   <div
   class="search__search-panel">
-    <select-option :placeholder="'Type'" :options='types' />
-    <select-option :placeholder='"Language"' :options='languages' />
+    <select-option :placeholder="'Type'" :options='types' v-model="type" />
+    <select-option :placeholder='"Language"' :options='languages' v-model="language" />
     <input-keyword v-model="keyword" />
     <submit v-on:startSearch='composeURL'/>
   </div>
@@ -27,6 +27,8 @@ export default {
       types,
       languages,
       keyword: '',
+      type: '',
+      language: '',
     };
   },
   methods: {

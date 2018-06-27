@@ -1,7 +1,8 @@
 <template>
   <div class='select__group'>
       <select
-      v-model='selected'
+      :value="selected"
+      @input="selected = $event.target.value; $emit('input', selected)"
       class='select-group__select'>
         <option v-bind:value="'placeholder'" disabled>{{ placeholder }}</option>
         <option v-for="option in options" v-bind:key='option' v-bind:value="option">
