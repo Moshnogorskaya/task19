@@ -1,19 +1,7 @@
 <template>
 <ul class="results-list">
-        <li class="results-list__item">
-          <list-view />
-        </li>
-         <li class="results-list__item">
-          <list-view />
-        </li>
-         <li class="results-list__item">
-          <list-view />
-        </li>
-         <li class="results-list__item">
-          <list-view />
-        </li>
-         <li class="results-list__item">
-          <list-view />
+        <li v-for='(value, key) in repos' :key='key' class="results-list__item">
+          <list-view :repo='value' />
         </li>
     </ul>
 </template>
@@ -24,6 +12,7 @@ import ListView from './ListView.vue';
 
 export default {
   name: 'results',
+  props: ['repos'],
   components: {
     ListView,
   },

@@ -13,7 +13,8 @@
     </button>
   </div>
   <component
-    v-bind:is='currentViewComponent'
+    :is='currentViewComponent'
+    :repos='repos'
   ></component>
    </div>
 </template>
@@ -24,6 +25,7 @@ import ResultsDashboard from '@/components/dashboard/ResultsDashboard.vue';
 
 export default {
   name: 'results',
+  props: ['repos'],
   components: {
     ResultsList,
     ResultsDashboard,
