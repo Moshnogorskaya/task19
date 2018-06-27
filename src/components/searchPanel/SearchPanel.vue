@@ -4,7 +4,7 @@
     <select-option :placeholder="'Type'" :options='types' v-model="type" :valid="valid" />
     <select-option :placeholder='"Language"' :options='languages' v-model="language" />
     <input-keyword v-model="keyword" />
-    <submit v-on:startSearch='composeURL'/>
+    <submit @clickSearch='composeURL'/>
   </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
       let url;
       if (this.valid) {
         url = `https://api.github.com/search/${this.type.toLowerCase()}?q=${this.keyword}+language:${this.language}&sort=stars&order=desc`;
-        console.log(url);
+        this.$emit('submitSearch', url);
       }
     },
   },
