@@ -3,7 +3,7 @@
   class="search__search-panel">
     <select-option :placeholder="'Type'" :options='types' />
     <select-option :placeholder='"Language"' :options='languages' />
-    <input-keyword />
+    <input-keyword v-model="keyword" />
     <submit v-on:startSearch='composeURL'/>
   </div>
 </template>
@@ -26,6 +26,7 @@ export default {
     return {
       types,
       languages,
+      keyword: '',
     };
   },
   methods: {
