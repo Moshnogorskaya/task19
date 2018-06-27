@@ -1,56 +1,17 @@
 <template>
   <div class="search">
     <search-panel @submitSearch='getRepos' />
-    <results v-if='repos' :repos='repos' />
+    <results v-if='Object.keys(repos).length' :repos='repos' />
     <no-results v-else />
   </div>
 </template>
 
 <script>
-
 import SearchPanel from '@/components/searchPanel/SearchPanel.vue';
 import Results from '@/components/Results.vue';
 import NoResults from '@/components/NoResults.vue';
 import getGithubData from '@/components/utility/get-github-data';
 import prepareDataToDisplay from '@/components/utility/prepare-data-to-display';
-
-const repo1 = {
-  id: 100,
-  name: 'Repo',
-  description: 'description',
-  language: 'languageeee',
-  html_url: '',
-  stargazers_count: 200,
-  topics: ['topic', 'topic', 'topic'],
-  saved: false,
-};
-
-const repo2 = {
-  id: 200,
-  name: 'Repo',
-  description: 'description',
-  language: 'languageeee',
-  html_url: '',
-  stargazers_count: 200,
-  topics: ['topic', 'topic', 'topic'],
-  saved: false,
-};
-const repo3 = {
-  id: 300,
-  name: 'Repo',
-  description: 'description',
-  language: 'languageeee',
-  html_url: '',
-  stargazers_count: 200,
-  topics: ['topic', 'topic', 'topic'],
-  saved: false,
-};
-
-const repos = {
-  [repo1.id]: repo1,
-  [repo2.id]: repo2,
-  [repo3.id]: repo3,
-};
 
 export default {
   name: 'search',
@@ -61,7 +22,7 @@ export default {
   },
   data() {
     return {
-      repos,
+      repos: {},
     };
   },
   methods: {
@@ -72,7 +33,6 @@ export default {
         const myRepos = prepareDataToDisplay(response.data.items);
         console.log(myRepos);
         this.repos = myRepos;
-        // this.timer = setTimeout(() => this.setState({ waiting: false }), 2000);
       });
     },
   },
@@ -85,5 +45,4 @@ export default {
   align-items: center;
   width: 80%;
 }
-
 </style>
