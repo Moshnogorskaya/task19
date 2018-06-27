@@ -6,7 +6,12 @@
         <dashboard-view-info :repo='value' />
         <div class="button-wrapper">
           <button
-            class='repo-dashboard__action delete'>REMOVE FROM LIST
+            :class="['repo-dashboard__action', {
+              'repo-dashboard__action_add': value.saved === false,
+              'repo-dashboard__action_delete': value.saved === true
+              }]"
+              @click='$emit("toggleRepo", value.id)'
+              >{{ value.saved ? 'REMOVE FROM LIST' : 'ADD TO LIST' }}
           </button>
         </div>
       </div>
@@ -57,16 +62,15 @@ width: 50%;
   height: 55%;
   font-weight: 100;
   font-size: 12px;
-  transition: background-color 0.5s;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
   justify-content: center;
   cursor: pointer;
 }
-.repo-dashboard__action.add {
+.repo-dashboard__action_add {
   background: #0366d6;
   width: 37%;
 }
-.repo-dashboard__action.delete {
+.repo-dashboard__action_delete {
   background: #eb5757;
   width: 50%;
 }
