@@ -19,13 +19,13 @@ function cutString(string, desiredLength) {
 //   return newRepo;
 // }
 
-function prepareDataToDisplay(repos) {
+function prepareDataToDisplay(repos, savedRepos) {
   const newRepos = {};
   repos.forEach((repo) => {
     const newRepo = Object.assign({}, repo);
     newRepo.topics = newRepo.topics.slice(0, 4);
     newRepo.description = cutString(repo.description, 90);
-    newRepo.saved = false;
+    newRepo.saved = !!savedRepos[newRepo.id];
     newRepos[repo.id] = newRepo;
   });
   return newRepos;

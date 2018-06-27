@@ -1,7 +1,10 @@
 <template>
   <div class="search">
     <search-panel @submitSearch='getRepos' />
-    <results v-if='Object.keys(repos).length' :repos='repos' @toggleRepo='$emit("toggleRepo", $event)'/>
+    <results
+      v-if='Object.keys(repos).length'
+      :repos='repos'
+      @toggleRepo='$emit("toggleRepo", $event)'/>
     <no-results v-else />
   </div>
 </template>
@@ -23,7 +26,6 @@ export default {
   methods: {
     getRepos(url) {
       getGithubData(url).then((response) => {
-        // const myRepos = prepareDataToDisplay(response.data.items);
         this.$emit('gotFreshRepos', response.data.items);
       });
     },

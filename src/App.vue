@@ -3,7 +3,11 @@
     <div class='wrapper'>
       <navigation />
       <keep-alive include='search'>
-        <router-view @gotFreshRepos='prepareRepos' @toggleRepo='toggleRepo' :repos='repos' :savedRepos='savedRepos' />
+        <router-view
+          @gotFreshRepos='prepareRepos'
+          @toggleRepo='toggleRepo'
+          :repos='repos'
+          :savedRepos='savedRepos' />
       </keep-alive>
     </div>
     <footer-info />
@@ -30,7 +34,7 @@ export default {
   },
   methods: {
     prepareRepos(repos) {
-    this.repos = prepareDataToDisplay(repos);
+      this.repos = prepareDataToDisplay(repos, this.savedRepos);
     },
     toggleRepo(id) {
       this.repos[id].saved = !this.repos[id].saved;
@@ -39,7 +43,7 @@ export default {
       } else {
         this.savedRepos[id] = this.repos[id];
       }
-    }
+    },
   },
 };
 </script>
