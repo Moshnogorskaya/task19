@@ -17,15 +17,20 @@ export default {
   data() {
     return {
       text: 'SEARCH',
+      waiting: false,
     };
   },
   methods: {
     onClick() {
-      this.text = 'LOADING...';
-      this.$emit('clickSearch');
-      setTimeout(() => this.changeText(), 2000);
+      if (!this.waiting) {
+        this.waiting = true;
+        this.text = 'LOADING...';
+        this.$emit('clickSearch');
+        setTimeout(() => this.beReady(), 2000);
+      }
     },
-    changeText() {
+    beReady() {
+      this.waiting = false;
       this.text = 'SEARCH';
     },
   },
