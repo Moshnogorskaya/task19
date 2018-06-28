@@ -1,7 +1,7 @@
 <template>
    <div class="no-results-group">
-      <h1 class="no-results-group__heading">NO RESULTS</h1>
-      <p class="no-results-group__text">try again</p>
+      <h1 class="no-results-group__heading">{{ heading }}</h1>
+      <p class="no-results-group__text">{{ text }}</p>
       <div class="no-results-group__image" />
     </div>
 </template>
@@ -10,6 +10,7 @@
 
 export default {
   name: 'no-results',
+  props: ['heading', 'text'],
   components: {
   },
 };

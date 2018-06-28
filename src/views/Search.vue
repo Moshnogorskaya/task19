@@ -5,7 +5,9 @@
       v-if='Object.keys(repos).length'
       :repos='repos'
       @toggleRepo='$emit("toggleRepo", $event)'/>
-    <no-results v-else />
+    <no-results v-else
+      :heading='"NO RESULTS FOUND"'
+      :text='"select other parameters and try again"'/>
   </div>
 </template>
 

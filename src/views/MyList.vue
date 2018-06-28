@@ -2,7 +2,9 @@
   <div class="my-list">
     <h1 class="my-list__heading">My List</h1>
     <results v-if='saved' :repos='savedRepos' @toggleRepo='$emit("toggleRepo", $event); saved--' />
-    <no-results v-else />
+    <no-results v-else
+      :heading='"NOTHING THERE"'
+      :text='"add a few items"'/>
   </div>
 </template>
 
