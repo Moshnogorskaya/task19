@@ -1,15 +1,33 @@
 <template>
    <button
-     @click='$emit("clickSearch")'
+     @click='onClick'
       class='search__button'>
-      <span>SEARCH</span>
+      <span>{{ text }}</span>
     </button>
 </template>
 
 <script>
+
+import { setTimeout } from 'timers';
+
 export default {
   name: 'submit',
   components: {
+  },
+  data() {
+    return {
+      text: 'SEARCH',
+    };
+  },
+  methods: {
+    onClick() {
+      this.text = 'LOADING...';
+      this.$emit('clickSearch');
+      setTimeout(() => this.changeText(), 2000);
+    },
+    changeText() {
+      this.text = 'SEARCH';
+    },
   },
 };
 </script>
